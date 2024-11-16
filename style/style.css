@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(105,105,105);
+}
+
+.title {
+    width: 100%;
+    height: 20%;
+    margin: 0;
+    text-align: center;
+    background-color: rgb(32,32,32);
+    color: white;
+    font-size: large;
+}
+
+.title h1 {
+    margin: 0; /* Rimuove i margini predefiniti del <h1> */
+}
+
+.main{
+    text-align: center;
+    font-weight: 690;
+}
