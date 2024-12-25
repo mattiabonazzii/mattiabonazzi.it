@@ -1,25 +1,180 @@
 body {
     margin: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgb(105,105,105);
+    height: 100vh;
+    background-color: rgb(105, 105, 105);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px 0;
+    flex-grow: 0;
+    padding-bottom: 60px; /* Space for the footer */
+}
+
+.side-left, .side-right {
+    width: 20%;
+    background-color: rgb(200, 200, 200);
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+}
+
+.side-left {
+    margin-right: 10px;
+}
+
+.side-right {
+    margin-left: 10px;
+}
+
+.main {
+    text-align: center;
+    font-weight: 700;
+    font-family: 'FontMain';
+    width: 60%;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-wrap: break-word;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
 }
 
 .title {
     width: 100%;
-    height: 20%;
-    margin: 0;
+    padding: 20px 0;
     text-align: center;
-    background-color: rgb(32,32,32);
+    background-color: rgb(32, 32, 32);
     color: white;
-    font-size: large;
+    font-family: 'FontTitolo', 'Times New Roman', Times, serif;
 }
 
 .title h1 {
-    margin: 0; /* Rimuove i margini predefiniti del <h1> */
+    margin: 0;
 }
 
-.main{
+footer {
     text-align: center;
-    font-weight: 690;
+    padding: 10px;
+    width: 100%;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    position: fixed;
+    bottom: 0;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(200, 200, 200, 0.5);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(32, 32, 32, 0.8);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(32, 32, 32, 1);
+}
+
+@media (max-width: 768px) {
+    .main {
+        width: 80%;
+    }
+
+    .side-left, .side-right {
+        display: none;
+    }
+
+    .title {
+        font-size: 90%;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: rgb(32, 32, 32);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: rgb(105, 105, 105);
+}
+
+a:active {
+    color: rgb(32, 32, 32);
+}
+
+a:visited {
+    color: rgb(121, 107, 107);
+}
+
+.side-left a, .side-right a, .main a {
+    font-size: 16px;
+}
+
+@font-face {
+    font-family: 'FontTitolo';
+    src: url('../font/Dbacks.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FontMain';
+    src: url('../font/Aquifer.ttf') format('truetype'),
+    url('../font/Aquifer.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+    z-index: 1000;
+}
+
+.cookie-banner a {
+    color: #ffeb3b;
+    text-decoration: none;
+}
+
+.cookie-banner button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.cookie-banner button:hover {
+    background-color: #45a049;
 }

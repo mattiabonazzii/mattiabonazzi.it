@@ -1,21 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./img/icons/pianetamarte.ico" type="image/x-icon">
-    <title>Homepage</title>
+    <title>Homepage del matti</title>
     <link rel="stylesheet" href="./style/style.css">
 </head>
+
 <body>
     <div class="title">
-        <h1>Benvenuto nel mio sito</h1>
+        <h1>MATTIA BONAZZI</h1>
     </div>
-    <div class="main">
-        
+    <div class="container">
+        <div class="side-left">
+            <ul>
+                <li><a href="https://www.github.com/mattiabonazzii" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </li>
+                <li><a href="https://instagram.com/mattiabonazzii" target="_blank"
+                        rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="#">Empty</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <p>
+                Ciao! Sono Mattia, questo è il mio sito personale.
+                <br>Ha senso questo font? non c'entra niente con quello del titolo ma mi piaceva.
+                <br>non so neanche cosa metterci qua dentro
+                <br><br>In realtà quel cookie non fa niente
+            </p>
+        </div>
+        <div class="side-right">
+            <img src="./img/me.jpg" alt="gio scotti con la barba" style="width: 100%; border-radius: 5px;">
+            <img src="./img/example2.jpg" alt="Example Image 2"
+                style="width: 100%; margin-top: 10px; border-radius: 5px;">
+        </div>
+        <div id="cookie-banner" class="cookie-banner">
+            <p>Questo sito utilizza i cookie per migliorare l'esperienza utente. <a href="#">Leggi di più</a>.</p>
+            <button id="accept-cookies" class="accept-cookies">Accetta</button>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Verifica se l'utente ha già accettato i cookie
+                if (document.cookie.indexOf("cookies_accepted=true") === -1) {
+                    document.getElementById("cookie-banner").style.display = "block";
+                }
+
+                // Aggiungi l'evento di clic al bottone "Accetta"
+                document.getElementById("accept-cookies").addEventListener("click", function () {
+                    // Nascondi il banner
+                    document.getElementById("cookie-banner").style.display = "none";
+
+                    // Memorizza la preferenza dell'utente nei cookie
+                    document.cookie = "cookies_accepted=true; path=/; max-age=" + 60 * 60 * 24 * 365; // Il cookie durerà un anno
+                });
+            });
+
+        </script>
     </div>
     <footer>
-        © 2024 | Mattia Bonazzi 
+        © 2024 | Mattia Bonazzi
     </footer>
 </body>
+
 </html>
