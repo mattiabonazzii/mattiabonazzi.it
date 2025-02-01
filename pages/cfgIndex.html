@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrupt file creator</title>
+    <link rel="stylesheet" href="../style/cfgStyle.css">
+</head>
+
+<body>
+    <h1 id="title">Corrupt file generator</h1>
+    <div class="inputs">
+        <label for="filename">File name</label>
+        <input type="text" class="input" id="filename" maxlength="256">
+    </div>
+    <div class="inputs">
+        <label for="extension">Extension</label>
+        <input type="text" class="input" id="extension" maxlength="4">
+    </div>
+    <div class="inputs">
+        <label for="size">Size (kb)</label>
+        <input type="number" class="input" id="size" min="0">
+    </div>
+    <h1>Use this software at your own discretion. I am not liable for your actions.</h1>
+    <div>
+        <p id="errors"></p>
+    </div>
+    <div class="link">
+        <a href="../index.html">Go home</a><br>
+    </div>    
+    <button id="create" class="button-5">DOWNLOAD</button>
+</body>
+<script>
+    document.getElementById("create").addEventListener("click", function () {
+        //controlli
+        let filename = document.getElementById("filename").value;
+        let extension = document.getElementById("extension").value;
+        if(filename == ""|| extension == ""){
+            document.getElementById("errors").innerHTML = "Error: filename or extension are empty";
+            return;
+        }
+        else{
+            document.getElementById("errors").innerHTML = "";
+        }
+
+        //Creazione dell'array per il file 
+        let size = parseInt(document.getElementById("size").value);
+        size *= 1024;
+        var data = new Uint8Array(size)
+        if(size < 0) size*=-1;
+        for (let i = 0; i < size; i++) {
+            data[i] = Math.random() * 255;
+        }
+        let blob = new Blob([data], { type: "application/octet-stream" });
+
+        //Download del file
+        filename += '.' + extension;
+        let link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+</script>
+
+</html>
