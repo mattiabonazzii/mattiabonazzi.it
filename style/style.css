@@ -13,26 +13,28 @@ body {
 */
 .container {
     display: flex;
+    justify-content: space-between;
     flex: 1;
     width: 100%;
-    max-width: 1200px;
+    max-width: 98%;
     margin: 20px 0;
     flex-grow: 0;
-    padding-bottom: 60px; /* Space for the footer */
+    padding-bottom: 60px;
 }
 
 .side-left, .side-right {
-    width: 20%;
-    background-color: rgb(200, 200, 200);
+    width: 40%;
     padding: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
     max-height: calc(100vh - 140px);
+    color:#2a2261;
+    font-size:xx-large;
     overflow-y: auto;
 }
 
 .side-left {
     margin-right: 10px;
+    font-family: Humane-Thin;
+    font-size: 5vh;
 }
 
 .side-right {
@@ -42,7 +44,6 @@ body {
 .main {
     text-align: center;
     font-weight: 700;
-    font-family: 'FontMain';
     width: 60%;
     background-color: rgb(255, 255, 255);
     padding: 20px;
@@ -57,7 +58,7 @@ body {
     width: 100%;
     padding: 1.5vh 2vw;
     background-color: #F5F5D2;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid rgb(187, 187, 187);
     color: #2a2261;
     display: flex; /* Usa Flexbox */
     justify-content: space-between; /* Spinge gli elementi ai lati opposti */
@@ -70,7 +71,8 @@ body {
 }
 
 .titleleft h1{
-    font-weight: 600;
+    font-family: Humane-Thin;
+    font-size: 10vh;
 }
 
 h1{
@@ -83,6 +85,7 @@ h1{
 
 .titleright a{
     font-weight: 500;
+    margin: 0 1vh 0 1vh;
 }
 
 .title h1 {
@@ -93,7 +96,7 @@ h1{
 footer {
     text-align: center;
     font-size: 200px;
-    font-family: sans-serif;
+    font-family: Humane-Medium;
     padding: 10px;
     width: 100%;
     background-color: #2a2261;
@@ -161,20 +164,34 @@ a:visited {
     font-size: 16px;
 }
 
-/* @font-face {
+@font-face {
     font-family: 'FontTitolo';
-    src: url('../font/Dbacks.ttf') format('truetype');
+    src: url('../font/Dbacks/Dbacks.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'FontMain';
-    src: url('../font/Aquifer.ttf') format('truetype'),
-    url('../font/Aquifer.otf') format('opentype');
+    src: url('../font/Aquifer/Aquifer.ttf') format('truetype'),
+    url('../font/Aquifer/Aquifer.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
-} */
+}
+
+@font-face {
+    font-family: 'Humane-Thin';
+    src: url('../font/Humane/Humane-Thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Humane-Medium';
+    src: url('../font/Humane/Humane-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .cookie-banner {
     position: fixed;
